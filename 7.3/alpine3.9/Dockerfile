@@ -159,6 +159,7 @@ RUN set -xe \
                 --with-imap \
                 --with-imap-ssl \
                 --with-mysqli \
+		--with-pdo-mysql \
 		\
 # bundled pcre does not support JIT on s390x
 # https://manpages.debian.org/stretch/libpcre3-dev/pcrejit.3.en.html#AVAILABILITY_OF_JIT_SUPPORT
