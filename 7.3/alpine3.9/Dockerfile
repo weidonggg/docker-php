@@ -20,7 +20,8 @@ ENV PHPIZE_DEPS \
 		re2c
 
 # persistent / runtime deps
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
+RUN set -ex \
+    #&& sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
     && apk add --no-cache \
 		ca-certificates \
 		curl \
