@@ -2,19 +2,19 @@ FROM weidong93/php:7.3-cli-alpine3.9
 
 LABEL maintainer "ZhaoWeidong <zhaoweidong@gouuse.cn>"
 
-ENV ENV /etc/profile \
-    EXT_IGBINARY_VERSION 3.0.1 \
-    EXT_IMAGICK_VERSION 3.4.4 \
-    EXT_MAILPARSE_VERSION 3.0.3 \
-    EXT_MCRYPT_VERSION 1.0.2 \
-    EXT_MONGODB_VERSION 1.5.3 \
-    EXT_MSGPACK_VERSION 2.0.3 \
-    EXT_REDIS_VERSION 4.3.0 \
-    EXT_YAML_VERSION 2.0.4 \
-    EXT_PATH /usr/src/php/ext \
-    EXT_DOWNLOAD_DIR /usr/src/ext \
-    PECL_URL http://pecl.php.net/get \
-    TIMEZONE Asia/Shanghai
+ENV ENV /etc/profile 
+ENV EXT_IGBINARY_VERSION 3.0.1
+ENV EXT_IMAGICK_VERSION 3.4.4
+ENV EXT_MAILPARSE_VERSION 3.0.3
+ENV EXT_MCRYPT_VERSION 1.0.2
+ENV EXT_MONGODB_VERSION 1.5.3
+ENV EXT_MSGPACK_VERSION 2.0.3
+ENV EXT_REDIS_VERSION 4.3.0
+ENV EXT_YAML_VERSION 2.0.4
+ENV EXT_PATH /usr/src/php/ext
+ENV EXT_DOWNLOAD_DIR /usr/src/ext
+ENV PECL_URL http://pecl.php.net/get
+ENV TIMEZONE Asia/Shanghai
 
 RUN set -ex \
 ##### Setting Timezone to Asia/Shanghai.
