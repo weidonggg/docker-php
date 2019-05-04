@@ -18,7 +18,7 @@ ENV ENV /etc/profile \
 
 RUN set -ex \
 ##### Setting Timezone to Asia/Shanghai.
-    && apk add --no-cache tzdate \
+    && apk add --no-cache tzdata \
     && ln -snf /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
     && echo $TIMEZONE > /etc/timezone \
     && apk del tzdata; \
