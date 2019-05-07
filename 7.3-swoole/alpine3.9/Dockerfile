@@ -23,7 +23,7 @@ LABEL maintainer "ZhaoWeidong <zhaoweidong@gouuse.cn>"
 COPY --from=0 /usr/local/lib/php/extensions/no-debug-non-zts-20180731/swoole.so /usr/local/lib/php/extensions/no-debug-non-zts-20180731/
 
 RUN set -ex \
-    && docker-php-ext-enable swoole
+    && docker-php-ext-enable swoole; \
     \
      \
       \
