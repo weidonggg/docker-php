@@ -47,7 +47,7 @@ RUN set -ex \
         echo '	exec crond -b'; \
         echo '	set -- php "$@"'; \
         echo 'fi'; \
-        echo 'exec crond -b'; \
+        echo 'crond -b'; \
         echo 'exec "$@"'; \
     } > /usr/local/bin/docker-php-entrypoint; \
     \
