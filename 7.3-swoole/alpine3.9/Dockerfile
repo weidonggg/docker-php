@@ -28,6 +28,9 @@ RUN set -ex \
      \
       \
     cd /usr/local/etc/php \
-    && cp php.ini-production php.ini
+    && cp php.ini-production php.ini; \
+    \
+    cd /usr/bin \
+    && ln -snf ../local/bin/docker-php-entrypoint docker-php-entrypoint
 
 WORKDIR /opt/nginx/html

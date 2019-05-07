@@ -48,6 +48,9 @@ RUN set -ex \
         echo '	set -- php "$@"'; \
         echo 'fi'; \
         echo 'exec "$@"'; \
-    } > /usr/local/bin/docker-php-entrypoint
+    } > /usr/local/bin/docker-php-entrypoint; \
+    \
+    cd /usr/bin \
+    && ln -snf ../local/bin/docker-php-entrypoint docker-php-entrypoint
 
 WORKDIR /opt/nginx/html
