@@ -44,10 +44,10 @@ RUN set -ex \
         echo 'set -e'; \
         echo '# first arg is `-f` or `--some-option`'; \
         echo 'if [ "${1#-}" != "$1" ]; then'; \
-        echo '	exec crond -b'; \
+        echo '	crond -b -d 8'; \
         echo '	set -- php "$@"'; \
         echo 'fi'; \
-        echo 'crond -b'; \
+        echo 'crond -b -d 8'; \
         echo 'exec "$@"'; \
     } > /usr/local/bin/docker-php-entrypoint; \
     \
