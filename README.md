@@ -8,3 +8,4 @@
 * mongodb 1.5.3
 * msgpack 2.0.3
 * redis 4.3.0
+* yaml 2.0.4

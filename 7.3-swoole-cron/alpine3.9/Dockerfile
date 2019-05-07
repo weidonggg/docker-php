@@ -23,11 +23,29 @@ LABEL maintainer "ZhaoWeidong <zhaoweidong@gouuse.cn>"
 COPY --from=0 /usr/local/lib/php/extensions/no-debug-non-zts-20180731/swoole.so /usr/local/lib/php/extensions/no-debug-non-zts-20180731/
 
 RUN set -ex \
-    && docker-php-ext-enable swoole
+    && docker-php-ext-enable swoole; \
     \
      \
       \
     cd /usr/local/etc/php \
-    && cp php.ini-production php.ini
+    && cp php.ini-production php.ini; \
+     \
+    { \
+        echo "# min	hour	day	month	weekday	command"; \
+        echo "* * * * * /usr/bin/flock -xn /var/run/test.lock -c '/usr/local/bin/php /opt/nginx/html/artisan schedule:run  1>>/opt/nginx/html/storage/logs/cron.log 2>&1'"; \
+    } > /var/spool/cron/crontabs/root; \
+    \
+     \
+      \
+    {
+        echo '#!/bin/sh'; \
+        echo 'set -e'; \
+        echo '# first arg is `-f` or `--some-option`'; \
+        echo 'if [ "${1#-}" != "$1" ]; then'; \
+        echo '	crond -b'
+        echo '	set -- php "$@"'; \
+        echo 'fi'; \
+        echo 'exec "$@"'
+    } > /usr/local/bin/docker-php-entrypoint
 
 WORKDIR /opt/nginx/html
