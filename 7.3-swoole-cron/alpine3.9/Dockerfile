@@ -28,7 +28,7 @@ RUN set -ex \
      \
       \
     cd /usr/local/etc/php \
-    && cp php.ini-production php.ini; \
+    && curl -o php.ini https://raw.githubusercontent.com/1993Plus/docker-php/master/php.ini; \
      \
 ##### add system crontab task.
     { \
@@ -45,9 +45,11 @@ RUN set -ex \
         echo '# first arg is `-f` or `--some-option`'; \
         echo 'if [ "${1#-}" != "$1" ]; then'; \
         echo '	crond -b -d 8'; \
+        echo '  rm -rf /var/tmp/*'; \
         echo '	set -- php "$@"'; \
         echo 'fi'; \
         echo 'crond -b -d 8'; \
+        echo 'rm -rf /var/tmp/*'; \
         echo 'exec "$@"'; \
     } > /usr/local/bin/docker-php-entrypoint; \
     \

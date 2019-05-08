@@ -28,8 +28,21 @@ RUN set -ex \
      \
       \
     cd /usr/local/etc/php \
-    && cp php.ini-production php.ini; \
+    && curl -o php.ini https://raw.githubusercontent.com/1993Plus/docker-php/master/php.ini; \
     \
+##### Modify docker-php-entrypoint,remove swoole server pid file.
+    { \
+        echo '#!/bin/sh'; \
+        echo 'set -e'; \
+        echo '# first arg is `-f` or `--some-option`'; \
+        echo 'if [ "${1#-}" != "$1" ]; then'; \
+        echo '  rm -rf /var/tmp/*'; \
+        echo '	set -- php "$@"'; \
+        echo 'fi'; \
+        echo 'rm -rf /var/tmp/*'; \
+        echo 'exec "$@"'; \
+    } > /usr/local/bin/docker-php-entrypoint; \
+     \
     cd /usr/bin \
     && ln -snf ../local/bin/docker-php-entrypoint docker-php-entrypoint
 
