@@ -1,4 +1,4 @@
-FROM weidong93/php:7.3-ext as builder
+FROM cdce/php:7.3-ext as builder
 
 LABEL maintainer "ZhaoWeidong <zhaoweidong@gouuse.cn>"
 
@@ -33,7 +33,7 @@ RUN set -ex \
 ##### add system crontab task.
     { \
         echo "# min	hour	day	month	weekday	command"; \
-        echo "* * * * * /usr/bin/flock -xn /var/run/test.lock -c '/usr/local/bin/php /opt/nginx/html/artisan schedule:run  1>>/opt/nginx/html/storage/logs/cron.log 2>&1'"; \
+        echo "*       *       *       *       *       /usr/bin/flock -xn /var/run/test.lock -c '/usr/local/bin/php /opt/nginx/html/artisan schedule:run  1>>/opt/nginx/html/storage/logs/cron.log 2>&1'"; \
     } > /var/spool/cron/crontabs/root; \
     \
      \
