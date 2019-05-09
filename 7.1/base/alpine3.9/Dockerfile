@@ -108,11 +108,16 @@ RUN set -xe \
 		libxml2-dev \
 		openssl-dev \
 		sqlite-dev \
+		libpng-dev 
+		libjpeg-turbo-dev \
+		gettext-dev \
+		imap-dev \
+		icu-dev \
 	\
 	&& export CFLAGS="$PHP_CFLAGS" \
 		CPPFLAGS="$PHP_CPPFLAGS" \
 		LDFLAGS="$PHP_LDFLAGS" \
-	&& chmod +x /usr/local/bin/docker-php-source \
+	#&& chmod +x /usr/local/bin/docker-php-source \
 	&& docker-php-source extract \
 	&& cd /usr/src/php \
 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" \
