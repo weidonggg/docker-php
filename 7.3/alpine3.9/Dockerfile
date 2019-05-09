@@ -113,10 +113,10 @@ RUN set -xe \
 		openssl-dev \
 		sqlite-dev \
 		libpng-dev \
-                gettext-dev \
-                imap-dev \
-                icu-dev \
-                libxml2-dev \
+		gettext-dev \
+		imap-dev \
+		icu-dev \
+		libxml2-dev \
 	\
 	&& export CFLAGS="$PHP_CFLAGS" \
 		CPPFLAGS="$PHP_CPPFLAGS" \
@@ -151,15 +151,16 @@ RUN set -xe \
 		--with-openssl \
 		--with-zlib \
 		--enable-sockets \
-                --enable-pcntl \
-                --enable-intl \
-                --enable-exif \
-                --enable-soap \
-                --with-gd \
-                --with-gettext \
-                --with-imap \
-                --with-imap-ssl \
-                --with-mysqli \
+		--enable-pcntl \
+		--enable-intl \
+		--enable-exif \
+		--enable-soap \
+		--with-gd \
+		--with-jpeg \
+		--with-gettext \
+		--with-imap \
+		--with-imap-ssl \
+		--with-mysqli \
 		--with-pdo-mysql \
 		\
 # bundled pcre does not support JIT on s390x
