@@ -108,7 +108,7 @@ RUN set -xe \
 		libxml2-dev \
 		openssl-dev \
 		sqlite-dev \
-		libpng-dev 
+		libpng-dev \
 		libjpeg-turbo-dev \
 		gettext-dev \
 		imap-dev \
