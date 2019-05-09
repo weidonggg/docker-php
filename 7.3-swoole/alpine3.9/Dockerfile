@@ -16,7 +16,7 @@ RUN set -ex \
     && docker-php-ext-configure swoole --enable-openssl \
     && docker-php-ext-install swoole 
 
-FROM weidong93/php:7.3-ext as prod
+FROM cdce/php:7.3-ext as prod
 
 LABEL maintainer "ZhaoWeidong <zhaoweidong@gouuse.cn>"
 
