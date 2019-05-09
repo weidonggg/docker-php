@@ -54,7 +54,7 @@ RUN set -ex \
     } > /usr/local/bin/docker-php-entrypoint; \
     \
     cd /usr/bin \
-    && ln -snf ../local/bin/docker-php-entrypoint docker-php-entrypoint
+    && ln -snf ../local/bin/docker-php-entrypoint docker-php-entrypoint; \
     \ 
      \
       \
