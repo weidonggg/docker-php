@@ -157,7 +157,7 @@ RUN set -xe \
 		--enable-exif \
 		--enable-soap \
 		--with-gd \
-		--with-jpeg \
+		--with-jpeg-dir \
 		--with-gettext \
 		--with-imap \
 		--with-imap-ssl \
