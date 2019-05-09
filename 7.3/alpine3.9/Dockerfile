@@ -113,6 +113,7 @@ RUN set -xe \
 		openssl-dev \
 		sqlite-dev \
 		libpng-dev \
+		libjpeg-turbo-dev \
 		gettext-dev \
 		imap-dev \
 		icu-dev \
