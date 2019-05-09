@@ -117,7 +117,6 @@ RUN set -xe \
 		gettext-dev \
 		imap-dev \
 		icu-dev \
-		libxml2-dev \
 	\
 	&& export CFLAGS="$PHP_CFLAGS" \
 		CPPFLAGS="$PHP_CPPFLAGS" \
