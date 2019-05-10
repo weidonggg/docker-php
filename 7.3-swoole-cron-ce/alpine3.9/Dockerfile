@@ -62,7 +62,7 @@ RUN set -ex \
     && adduser -S -H -k -D -s /sbin/nologin -G zceo -u 90 zceo \
     && wget -O /usr/bin/gosu https://github.com/tianon/gosu/releases/download/1.11/gosu-amd64 \
     && chmod +x /usr/bin/gosu \
-    && mkdir -p /apps
+    && mkdir -p /apps \
     && wget -O /apps/run.sh https://raw.githubusercontent.com/1993Plus/docker-php/master/run.sh \
     && chmod +x /apps/run.sh
 
