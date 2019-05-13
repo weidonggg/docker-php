@@ -75,6 +75,7 @@ RUN set -ex \
                                 --with-mongodb-sasl=yes \
                                 --with-mongodb-ssl=yes \
                                 --with-mongodb-icu=yes \
+    && docker-php-ext-install mongodb \
     && apk del openssl-dev \
                icu-dev \
     # msgpack
