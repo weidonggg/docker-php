@@ -113,6 +113,7 @@ RUN set -xe \
 		openssl-dev \
 		sqlite-dev \
 		libpng-dev \
+		freetype-dev \
 		libjpeg-turbo-dev \
 		gettext-dev \
 		imap-dev \
@@ -157,6 +158,7 @@ RUN set -xe \
 		--enable-soap \
 		--with-gd \
 		--with-jpeg-dir \
+		--with-freetype-dir \
 		--with-gettext \
 		--with-imap \
 		--with-imap-ssl \
