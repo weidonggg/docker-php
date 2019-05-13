@@ -68,7 +68,15 @@ RUN set -ex \
     && wget $PECL_URL/mongodb-$EXT_MONGODB_VERSION.tar \
     && tar xf mongodb-$EXT_MONGODB_VERSION.tar \
     && mv mongodb-$EXT_MONGODB_VERSION $EXT_PATH/mongodb \
-    && docker-php-ext-install mongodb \
+    && apk add --no-cache openssl-dev \
+               cyrus-sasl-dev \
+               icu-dev \
+    && docker-php-ext-configure mongodb \
+                                --with-mongodb-sasl=yes \
+                                --with-mongodb-ssl=yes \
+                                --with-mongodb-icu=yes \
+    && apk del openssl-dev \
+               icu-dev \
     # msgpack
     && wget $PECL_URL/msgpack-$EXT_MSGPACK_VERSION.tar \
     && tar xf msgpack-$EXT_MSGPACK_VERSION.tar \
