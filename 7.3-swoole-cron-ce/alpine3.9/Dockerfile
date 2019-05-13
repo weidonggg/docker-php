@@ -25,7 +25,7 @@ COPY --from=0 /usr/local/lib/php/extensions/no-debug-non-zts-20180731/swoole.so 
 RUN set -ex \
     && sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
 ##### Install bash.
-    $$ apk add --no-cache bash \
+    && apk add --no-cache bash \
     && docker-php-ext-enable swoole; \
     \
      \
