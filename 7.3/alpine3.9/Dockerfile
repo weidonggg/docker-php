@@ -118,6 +118,8 @@ RUN set -xe \
 		gettext-dev \
 		imap-dev \
 		icu-dev \
+		zlib-dev \
+		libzip-dev \
 	\
 	&& export CFLAGS="$PHP_CFLAGS" \
 		CPPFLAGS="$PHP_CPPFLAGS" \
@@ -151,6 +153,7 @@ RUN set -xe \
 		--with-libedit \
 		--with-openssl \
 		--with-zlib \
+		--enable-zip \
 		--enable-sockets \
 		--enable-pcntl \
 		--enable-intl \
