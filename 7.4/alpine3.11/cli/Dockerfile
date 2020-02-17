@@ -159,15 +159,19 @@ RUN set -eux; \
 		--with-libedit \
 		--with-openssl \
 		--with-zlib \
-                --enable-zip \
+                ##--enable-zip \
+                --with-zip \
                 --enable-sockets \
                 --enable-pcntl \
                 --enable-intl \
                 --enable-exif \
                 --enable-soap \
-                --with-gd \
+                --enable-gd \
+                ##--with-gd \
+                --with-jpeg \
                 --with-jpeg-dir \
-                --with-freetype-dir \
+                ##--with-freetype-dir \
+                --with-freetype \
                 --with-gettext \
                 --with-imap \
                 --with-imap-ssl \
