@@ -169,7 +169,7 @@ RUN set -eux; \
                 --enable-gd \
                 ##--with-gd \
                 --with-jpeg \
-                --with-jpeg-dir \
+                #--with-jpeg-dir \
                 ##--with-freetype-dir \
                 --with-freetype \
                 --with-gettext \
