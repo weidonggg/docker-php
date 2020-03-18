@@ -1,6 +1,6 @@
 FROM cdce/php:7.4-cli-alpine3.11
 
-LABEL MAINTAINER "ZhaoWeidon <zhaoweidong@gouuse.cn>"
+LABEL MAINTAINER "ZhaoWeidong<zhaoweidong@gouuse.cn>"
 
 ENV ENV /etc/profile 
 ENV EXT_IGBINARY_VERSION 3.0.1
