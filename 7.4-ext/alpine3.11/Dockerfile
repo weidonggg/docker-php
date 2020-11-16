@@ -51,7 +51,7 @@ RUN set -ex \
     && wget $PECL_URL/imagick-$EXT_IMAGICK_VERSION.tar \
     && tar xf imagick-$EXT_IMAGICK_VERSION.tar \
     && mv imagick-$EXT_IMAGICK_VERSION $EXT_PATH/imagick \
-    && apk add --no-cache imagemagick-dev \
+    && apk add --no-cache imagemagick-dev imagemagick\
     && docker-php-ext-install imagick \
     # mailparse
     && wget $PECL_URL/mailparse-$EXT_MAILPARSE_VERSION.tar \
