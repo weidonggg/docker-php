@@ -51,7 +51,7 @@ RUN set -ex \
     && wget $PECL_URL/imagick-$EXT_IMAGICK_VERSION.tar \
     && tar xf imagick-$EXT_IMAGICK_VERSION.tar \
     && mv imagick-$EXT_IMAGICK_VERSION $EXT_PATH/imagick \
-    && apk add --no-cache imagemagick-dev imagemagick\
+    && apk add --no-cache imagemagick-dev \
     && docker-php-ext-install imagick \
     # mailparse
     && wget $PECL_URL/mailparse-$EXT_MAILPARSE_VERSION.tar \
@@ -96,4 +96,9 @@ RUN set -ex \
     && docker-php-ext-install yaml \
     # Remove temporary files.
     && docker-php-source delete \
-    && rm -rf $EXT_DOWNLOAD_DIR
+    && rm -rf $EXT_DOWNLOAD_DIR; \
+    \
+     \
+      \
+##### Install ffmpeg binary.
+    apk add --no-cache --clean-protected --purge --virtual .ffmpeg ffmpeg
