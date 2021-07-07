@@ -120,7 +120,6 @@ RUN set -eux; \
                 icu-dev \
                 zlib-dev \
                 libzip-dev \
-
 	; \
 	\
 	export CFLAGS="$PHP_CFLAGS" \

@@ -111,6 +111,14 @@ RUN set -eux; \
 		oniguruma-dev \
 		openssl-dev \
 		sqlite-dev \
+                libpng-dev \
+                freetype-dev \
+                libjpeg-turbo-dev \
+                gettext-dev \
+                imap-dev \
+                icu-dev \
+                zlib-dev \
+                libzip-dev \
 	; \
 	\
 	export CFLAGS="$PHP_CFLAGS" \
@@ -151,6 +159,25 @@ RUN set -eux; \
 		--with-libedit \
 		--with-openssl \
 		--with-zlib \
+                ##--enable-zip \
+                --with-zip \
+                --enable-sockets \
+                --enable-pcntl \
+                --enable-intl \
+                --enable-exif \
+                --enable-soap \
+                --enable-gd \
+                ##--with-gd \
+                --with-jpeg \
+                #--with-jpeg-dir \
+                ##--with-freetype-dir \
+                --with-freetype \
+                --with-gettext \
+                --with-imap \
+                --with-imap-ssl \
+                --with-mysqli \
+                --with-pdo-mysql \
+				--enable-bcmath \
 		\
 # in PHP 7.4+, the pecl/pear installers are officially deprecated (requiring an explicit "--with-pear") and will be removed in PHP 8+; see also https://github.com/docker-library/php/issues/846#issuecomment-505638494
 		--with-pear \
