@@ -3,7 +3,7 @@ FROM php:7.4-fpm-alpine3.14
 LABEL maintainer="Zhao Weidong<1993plus@gmail.com>"
 
 
-RUN set -eux; \
+RUN set -ex -o pipefail; \
     apk add --no-cache --virtual .build-deps \
         libpng-dev \
         freetype-dev \
