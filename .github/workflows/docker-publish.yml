@@ -25,14 +25,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Switch workdir
-        run: cd 7.4/alpine3.14/fpm/
-      -
         name: Build and push
         uses: docker/build-push-action@v2
         with:
           file: 7.4/alpine3.14/fpm/Dockerfile
-          context: .
+          context: ./7.4/alpine3.14/fpm/
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/php:7.4-fpm-alpine3.14
       -
